@@ -2,6 +2,7 @@ package com.arrows.mars.feed.service;
 
 /**
  * 博客后台服务
+ * @author arrows
  */
 public interface FeedService {
 

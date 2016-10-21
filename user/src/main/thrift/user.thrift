@@ -17,5 +17,4 @@ service user{
     **/
     void modifyPassword()
 
-
 }

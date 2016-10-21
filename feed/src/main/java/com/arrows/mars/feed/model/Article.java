@@ -13,51 +13,52 @@ public class Article {
     private Long id;
 
     /**
-     * 作者ID
+     * 谁写的
      */
     private Long authorId;
 
     /**
-     * 可见级别 0：全部可见，1：仅自己可见
+     * 写了什么
+     */
+    private Long contentId;
+
+    /**
+     * 谁能看见 0：全部可见，1：仅自己可见
      */
     private Integer visible;
+
+    /**
+     * 这篇文章是什么类型的
+     */
+    private String articleType;
+
+    /**
+     * 什么时候修改过
+     */
+    private Date mTime;
+
+    /**
+     * 什么时候写的
+     */
+    private Date cTime;
 
     /**
      * 删除观点 0：有效，1：删除
      */
     private Integer isDelete;
 
-    /**
-     * 文章类型
-     */
-    private String articleType;
-
-    /**
-     * 修改时间
-     */
-    private Date modifyTime;
-
-    /**
-     * 创建时间
-     */
-    private Date createTime;
-
-    /**
-     * 保存时间
-     */
-    private Date insertTime;
-
     public Article() {
     }
 
-    public Article(Long authorId, Integer visible, Integer isDelete, String articleType, Date modifyTime, Date createTime, Date insertTime) {
+    public Article(Long id, Long authorId, Long contentId, Integer visible, String articleType, Date mTime, Date cTime, Integer isDelete) {
+        this.id = id;
         this.authorId = authorId;
+        this.contentId = contentId;
         this.visible = visible;
-        this.isDelete = isDelete;
         this.articleType = articleType;
-        this.modifyTime = modifyTime;
-        this.createTime = createTime;
-        this.insertTime = insertTime;
+        this.mTime = mTime;
+        this.cTime = cTime;
+        this.isDelete = isDelete;
     }
 
     public Long getId() {
@@ -76,20 +77,20 @@ public class Article {
         this.authorId = authorId;
     }
 
+    public Long getContentId() {
+        return contentId;
+    }
+
+    public void setContentId(Long contentId) {
+        this.contentId = contentId;
+    }
+
     public Integer getVisible() {
         return visible;
     }
 
     public void setVisible(Integer visible) {
         this.visible = visible;
-    }
-
-    public Integer getIsDelete() {
-        return isDelete;
-    }
-
-    public void setIsDelete(Integer isDelete) {
-        this.isDelete = isDelete;
     }
 
     public String getArticleType() {
@@ -100,41 +101,27 @@ public class Article {
         this.articleType = articleType;
     }
 
-    public Date getModifyTime() {
-        return modifyTime;
+    public Date getmTime() {
+        return mTime;
     }
 
-    public void setModifyTime(Date modifyTime) {
-        this.modifyTime = modifyTime;
+    public void setmTime(Date mTime) {
+        this.mTime = mTime;
     }
 
-    public Date getCreateTime() {
-        return createTime;
+    public Date getcTime() {
+        return cTime;
     }
 
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
+    public void setcTime(Date cTime) {
+        this.cTime = cTime;
     }
 
-    public Date getInsertTime() {
-        return insertTime;
+    public Integer getIsDelete() {
+        return isDelete;
     }
 
-    public void setInsertTime(Date insertTime) {
-        this.insertTime = insertTime;
-    }
-
-    @Override
-    public String toString() {
-        return "Article{" +
-                "id=" + id +
-                ", authorId=" + authorId +
-                ", visible=" + visible +
-                ", isDelete=" + isDelete +
-                ", articleType='" + articleType + '\'' +
-                ", modifyTime=" + modifyTime +
-                ", createTime=" + createTime +
-                ", insertTime=" + insertTime +
-                '}';
+    public void setIsDelete(Integer isDelete) {
+        this.isDelete = isDelete;
     }
 }

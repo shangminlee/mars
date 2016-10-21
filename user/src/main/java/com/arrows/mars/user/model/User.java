@@ -38,6 +38,11 @@ public class User {
     private Integer version;
 
     /**
+     * 是否禁用 0：有效，1：禁用
+     */
+    private Integer isDisable;
+
+    /**
      * 修改时间
      */
     private Date mTime;
@@ -50,12 +55,13 @@ public class User {
     public User() {
     }
 
-    public User(String userName, String nickName, String email, String mobile, Integer version, Date mTime, Date cTime) {
+    public User(String userName, String nickName, String email, String mobile, Integer version, Integer isDisable, Date mTime, Date cTime) {
         this.userName = userName;
         this.nickName = nickName;
         this.email = email;
         this.mobile = mobile;
         this.version = version;
+        this.isDisable = isDisable;
         this.mTime = mTime;
         this.cTime = cTime;
     }
@@ -108,6 +114,14 @@ public class User {
         this.version = version;
     }
 
+    public Integer getIsDisable() {
+        return isDisable;
+    }
+
+    public void setIsDisable(Integer isDisable) {
+        this.isDisable = isDisable;
+    }
+
     public Date getmTime() {
         return mTime;
     }
@@ -133,6 +147,7 @@ public class User {
                 ", email='" + email + '\'' +
                 ", mobile='" + mobile + '\'' +
                 ", version=" + version +
+                ", isDisable=" + isDisable +
                 ", mTime=" + mTime +
                 ", cTime=" + cTime +
                 '}';

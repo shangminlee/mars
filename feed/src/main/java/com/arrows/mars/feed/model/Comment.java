@@ -13,68 +13,117 @@ public class Comment {
     private Long id;
 
     /**
-     * 文章ID
+     * 在哪说的
      */
-    private Long articleId;
+    private Long topicId;
 
     /**
-     * 文章作者ID
-     */
-    private Long articleAuthorId;
-
-    /**
-     * 被回复评论ID
-     */
-    private Long commentId;
-
-    /**
-     * 评论作者ID
+     * 谁说的
      */
     private Long authorId;
 
     /**
-     * 被回复评论作者ID
+     * 说了什么
      */
-    private Long commentAuthorId;
+    private Long contentId;
 
     /**
-     * 可见级别
+     * 对谁说-对事不对人,只针对内容
+     */
+    private Long toId;
+
+    /**
+     * 谁能看见 0:全部能看见,1:仅自己可见
      */
     private Integer visible;
 
     /**
-     * 是否删除
+     * 什么时候改动了
+     */
+    private Date mTime;
+
+    /**
+     * 什么时候说的
+     */
+    private Date cTime;
+
+    /**
+     * 是不是收回说出去的话
      */
     private Integer isDelete;
-
-    /**
-     * 修改时间
-     */
-    private Date modifyTime;
-
-    /**
-     * 创建时间
-     */
-    private Date createTime;
-
-    /**
-     * 保存时间
-     */
-    private Date insertTime;
 
     public Comment() {
     }
 
-    public Comment(Long articleId, Long articleAuthorId, Long commentId, Long authorId, Long commentAuthorId, Integer visible, Integer isDelete, Date modifyTime, Date createTime, Date insertTime) {
-        this.articleId = articleId;
-        this.articleAuthorId = articleAuthorId;
-        this.commentId = commentId;
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getTopicId() {
+        return topicId;
+    }
+
+    public void setTopicId(Long topicId) {
+        this.topicId = topicId;
+    }
+
+    public Long getAuthorId() {
+        return authorId;
+    }
+
+    public void setAuthorId(Long authorId) {
         this.authorId = authorId;
-        this.commentAuthorId = commentAuthorId;
+    }
+
+    public Long getContentId() {
+        return contentId;
+    }
+
+    public void setContentId(Long contentId) {
+        this.contentId = contentId;
+    }
+
+    public Long getToId() {
+        return toId;
+    }
+
+    public void setToId(Long toId) {
+        this.toId = toId;
+    }
+
+    public Integer getVisible() {
+        return visible;
+    }
+
+    public void setVisible(Integer visible) {
         this.visible = visible;
+    }
+
+    public Date getmTime() {
+        return mTime;
+    }
+
+    public void setmTime(Date mTime) {
+        this.mTime = mTime;
+    }
+
+    public Date getcTime() {
+        return cTime;
+    }
+
+    public void setcTime(Date cTime) {
+        this.cTime = cTime;
+    }
+
+    public Integer getIsDelete() {
+        return isDelete;
+    }
+
+    public void setIsDelete(Integer isDelete) {
         this.isDelete = isDelete;
-        this.modifyTime = modifyTime;
-        this.createTime = createTime;
-        this.insertTime = insertTime;
     }
 }
